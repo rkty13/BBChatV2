@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Reflection;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -22,10 +23,15 @@ public class LoginScreen extends Application{
 		ds.setOffsetX(5.0);
 		ds.setColor(Color.WHITE);
 		
+		Reflection reflection = new Reflection();
+		reflection.setFraction(0.8);
+		reflection.setTopOffset(-20);
+		
 		label = new Label("Test");
 	    button = new Button("Click");
 	    
 	    button.setEffect(ds);
+	    label.setEffect(reflection);
 	    
 	    label.getStyleClass().add("my_customlabel");
 	    
